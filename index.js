@@ -48,6 +48,6 @@ json = JSON.stringify(json);
 fs.writeFile(fileOutputName ,json, (error)=>{
     if(error) throw error;
 
-    console.log('Foi criado com sucesso');
+    console.log('Foi criado com sucesso em ' + fileOutputName);
 })
 
