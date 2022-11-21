@@ -38,13 +38,9 @@ json = json.map(element => {
    let newJson = treatingFields(element);
    console.log(newJson)    
    return newJson; 
-
 });
 
 json = JSON.stringify(json);
-
-// console.log(json);
-
 
 fs.writeFile(fileOutputName ,json, (error)=>{
     if(error) throw error;
