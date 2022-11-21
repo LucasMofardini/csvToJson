@@ -3,17 +3,17 @@ let fs = require('fs');
 let path = require('path')
 let csvToJson = require('convert-csv-to-json');
 
-// node index.js TipoCultivo.csv SK
+// node index.js TipoCultivo.csv SK ,
 
 let nameFile = process.argv[2];
 let fileInputName = `./csv/${nameFile}`; 
 let fileOutputName = `./json/${nameFile}`;
 
 const SK = process.argv[3];
+const splitType = process.argv[4] ? process.argv[4] : ','; 
 
 csvToJson.utf8Encoding().getJsonFromCsv(fileInputName);
-
-let json = csvToJson.fieldDelimiter(',').getJsonFromCsv(fileInputName);
+let json = csvToJson.fieldDelimiter(splitType).getJsonFromCsv(fileInputName);
 
 const treatingFields = (obj) => {
     let newObj = {};
@@ -33,6 +33,7 @@ const treatingFields = (obj) => {
 
     return newObj
 }
+
 json = json.map(element => {
    let newJson = treatingFields(element);
    console.log(newJson)    
