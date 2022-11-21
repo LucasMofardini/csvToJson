@@ -1,4 +1,4 @@
-# Transform CSV in JSON with translate
+# Transform CSV in JSON with translation
 
 how to use? 
  - put csv file in csv/ diretory
